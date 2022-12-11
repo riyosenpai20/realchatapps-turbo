@@ -5,10 +5,10 @@
         </h4>
         <%= render 'layouts/new_room_form' %>
         
-        <!-- <%= turbo_stream_from "rooms"%> -->
-        <!-- <div id="rooms" class="text-decoration-none"> -->
+        <%= turbo_stream_from "rooms"%>
+        <div id="rooms" class="text-decoration-none">
             <%= render @rooms %>
-        <!-- </div> -->
+        </div>
        
        
         
