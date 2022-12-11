@@ -16,19 +16,19 @@
 #
 default: &default
   # postgresql connection
-  # adapter: postgresql
-  # encoding: unicode
-  # # For details on connection pooling, see Rails configuration guide
-  # # https://guides.rubyonrails.org/configuring.html#database-pooling
-  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   # mysql connection
-  adapter: mysql2
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: admin
-  password: admin1234
-  host: 192.168.1.5
+  # adapter: mysql2
+  # encoding: utf8mb4
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # username: admin
+  # password: admin1234
+  # host: 192.168.1.5
 
 development:
   <<: *default
@@ -92,5 +92,5 @@ test:
 production:
   <<: *default
   database: realchatapps_turbo_production
-  # username: realchatapps_turbo
-  # password: <%= ENV["REALCHATAPPS_TURBO_DATABASE_PASSWORD"] %>
+  username: realchatapps_turbo
+  password: <%= ENV["REALCHATAPPS_TURBO_DATABASE_PASSWORD"] %>
