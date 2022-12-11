@@ -1,12 +1,12 @@
 <div id="chatroom_container" class="row ">
     <div id="side_panel" class="col-md-4 col-sm-4">
-        <h4>
+        <h4 class="mt-2">
             Rooms
         </h4>
         <%= render 'layouts/new_room_form' %>
         
         <%= turbo_stream_from "rooms"%>
-        <div id="rooms" class="text-decoration-none">
+        <div id="rooms" >
             <%= render @rooms %>
         </div>
        
@@ -17,16 +17,22 @@
     class="col-md-8 col-sm-8 ">
         <% if @single_room %>
             <div id="single_room">
+                <div class="d-flex justify-content-between mt-2">
                 <h4 class="text-center"> 
                     <%= @single_room.name %> 
-                    <%= button_to "Clear", @room.id, method: :delete %>
+                    
                 </h4>
+                <%= button_to "Delete", @room.id, method: :delete, class: 'btn btn-danger btn-sm ms-5' %>
+                </div>
+                <%= render "users/form", user: @user %>
+                
                 <%= turbo_stream_from @single_room %>
-                <div id="messages" data-controller="scroll" >
+                <div id="messages" data-controller="scroll" class="ps-3 pe-2">
                     <% if @messages %>
                     <%= render @messages %>
                     <% end %>
                 </div>
+                
                 <%= render 'layouts/new_message_form' %>
             </div>
         <% end %>

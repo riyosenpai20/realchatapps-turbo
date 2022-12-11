@@ -1,0 +1,13 @@
+<%= form_with(model: user, :url => "/users") do |form| %>
+  <div class="input-group mb-3">
+    <%= form.text_field :name, value: session[:user], 
+        class: 'form-control', 
+        placeholder: "Name",
+        'aria-label': "Name",
+        'aria-describedby': "button-addon2"
+        %>
+    <%= form.submit "Save", class: "btn btn-primary", id: "button-addon2" %>
+  </div>
+<% end %>
+  
+

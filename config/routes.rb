@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :users
+  get 'user/new'
+  get 'messages/create'
   resources :rooms do
     resources :messages
+    
   end
   get 'rooms/index'
   root "rooms#index"
