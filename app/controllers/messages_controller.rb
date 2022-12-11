@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
  
   def create
-    # session[:user] = msg_params[:user]
     if Room.find(params[:room_id])
     @message = Message.create(body: msg_params[:body], room_id: params[:room_id], user: session[:user])
     else

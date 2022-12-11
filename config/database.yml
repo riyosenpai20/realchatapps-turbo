@@ -91,6 +91,6 @@ test:
 #
 production:
   <<: *default
-  database: realchatapps_turbo_production
-  username: realchatapps_turbo
+  database: turbochat_p797
+  username: turbochat
   password: <%= ENV["REALCHATAPPS_TURBO_DATABASE_PASSWORD"] %>
