@@ -1,13 +1,17 @@
 <%= form_with(model: user, :url => "/users") do |form| %>
-  <div class="input-group mb-3">
+  <div class="">
+    Your Name :
     <%= form.text_field :name, value: session[:user], 
         class: 'form-control', 
         placeholder: "Name",
         'aria-label': "Name",
-        'aria-describedby': "button-addon2"
+        'aria-describedby': ""
         %>
-    <%= form.submit "Save", class: "btn btn-primary", id: "button-addon2" %>
+        <small>
+          * This will be saved on your session
+        </small>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <%= form.submit "Start Chat", class: "btn btn-primary", id: "button-addon2" %>
   </div>
 <% end %>
-  
-

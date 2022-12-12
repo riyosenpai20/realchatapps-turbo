@@ -24,7 +24,6 @@
                 </h4>
                 <%= button_to "Delete", @room.id, method: :delete, class: 'btn btn-danger btn-sm ms-5' %>
                 </div>
-                <%= render "users/form", user: @user %>
                 
                 <%= turbo_stream_from @single_room %>
                 <div id="messages" data-controller="scroll" class="ps-3 pe-2">
