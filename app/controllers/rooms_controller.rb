@@ -1,24 +1,28 @@
 class RoomsController < ApplicationController
   def index
-    @room = Room.new
-    @rooms = Room.public_rooms
+    if session[:user] != ""
+      @room = Room.new
+      @rooms = Room.public_rooms
 
-    render 'index'
+      render 'index'
+    else
+      redirect_to root_path
+    end
   end
 
   def show
     begin
-    @single_room = Room.find(params[:id])
+      @single_room = Room.find(params[:id])
 
-    @room = Room.new
-    @rooms = Room.public_rooms
+      @room = Room.new
+      @rooms = Room.public_rooms
 
-    @message = Message.new
-    @messages = @single_room.messages.order(created_at: :asc)
+      @message = Message.new
+      @messages = @single_room.messages.order(created_at: :asc)
 
-    render 'index'
+      render 'index'  
     rescue
-    redirect_to action: "index"
+      redirect_to action: "index"
     end
   end
 

@@ -22,7 +22,13 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     session[:user] = params[:name]
-    redirect_to '/rooms'
+    if session[:user] != ""
+      redirect_to rooms_path
+    else
+      flash[:error] =  "Sorry, i think you forgot input your name"
+      flash.keep
+      redirect_to root_path
+    end
   end
 
   # # PATCH/PUT /users/1 or /users/1.json

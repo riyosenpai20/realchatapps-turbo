@@ -1,7 +1,7 @@
 development:
   adapter: redis
+  # url: redis://localhost:6379/1
   url: redis://red-ce9h1eta499e1udil7e0:6379
-
 test:
   adapter: test
 
