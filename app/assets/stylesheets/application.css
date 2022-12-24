@@ -25,16 +25,17 @@
 }
 
 #single_room {
-    height: calc(100vh - 150px);
+    /* height: calc(100vh - 150px); */
     /* overflow-x: hidden;
     overflow-y: scroll; */
 }
 
 #messages {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 310px);
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: #8e9aaf;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #room_container {
@@ -72,5 +73,10 @@
     margin-bottom: 10px;
     background-color: #dee2ff;
     color: black;
+}
+
+#error {
+    color: red;
+    font-size: 1em;
 }
 

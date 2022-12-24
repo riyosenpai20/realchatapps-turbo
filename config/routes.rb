@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   get 'user/new'
   get 'messages/create'
+  resources :rooms
   resources :rooms do
     resources :messages
     
